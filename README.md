@@ -28,4 +28,11 @@ THEN the saved events persist
 
 ### Screenshot
 
+/Users/jaylonthegreat/Desktop/Module-5-3rd-Partay/Assets/Jaylon Schedule.png
+
+![Alt text](<Assets/Jaylon Schedule.png>)
+
 ### Deployment
+
+https://jlonthegrea.github.io/Personal-Workday-Scheduler5/
+
