@@ -1,4 +1,7 @@
-var todayDate = $('#currentDay');
+var currentColor = '#dc3545';
+var futureColor = '#20c997';
+
+var timePeriod = $('#')
 
 $(document).ready(function() {
   $('.saveBTN').on('click', function () {
@@ -74,6 +77,17 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
   // current hour in 24-hour time?
   //
 
+  function blockColors() {
+    var currentTime = dayjs().format('kk');
+
+    for (var i = 0; i < timePeriod.length; i++) {
+      if (parseInt(timePeriod[i].id) === (currentTime)) {
+        timePeriod[i].style.backgroudColor = currentColor;
+      } else if (parseInt(timePeriod[i].id) > (currentTime)) {
+        timePeriod[i].style.backgroudColor = futureColor;
+      }
+    }
+  }
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
