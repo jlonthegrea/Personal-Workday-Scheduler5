@@ -28,5 +28,6 @@ THEN the saved events persist
 
 ### Screenshot
 
+![Alt text](<Jaylon Schedule.png>)
 
 ### Deployment
