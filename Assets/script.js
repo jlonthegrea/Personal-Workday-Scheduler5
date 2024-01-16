@@ -1,15 +1,8 @@
-var currentColor = '#dc3545';
-var futureColor = '#20c997';
-
-var timePeriod = $('#')
-
 $(document).ready(function() {
   $('.saveBTN').on('click', function () {
-    var value = $(this).siblings('.decsription').val();
+    var value = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
     
-
-
     localStorage.setItem(time, value);
     $('.notification').addClass('show');
 
@@ -17,7 +10,15 @@ $(document).ready(function() {
       $('.notification').removeClass('show');
     }, 6000);
   })
-});
+
+
+
+    // TODO: Add code to apply the past, present, or future class to each time
+  // block by comparing the id to the current hour. HINTS: How can the id
+  // attribute of each time-block be used to conditionally add or remove the
+  // past, present, and future classes? How can Day.js be used to get the
+  // current hour in 24-hour time?
+  //
 
 function hourUpdater() {
 
@@ -51,6 +52,14 @@ $('#hour-14 .description').val(localStorage.getItem('hour-14'));
 $('#hour-15 .description').val(localStorage.getItem('hour-15'));
 $('#hour-16 .description').val(localStorage.getItem('hour-16'));
 $('#hour-17 .description').val(localStorage.getItem('hour-17'));
+});
+
+  // TODO: Add code to display the current date in the header of the page.
+var timeOnPage = dayjs().format("[Today is: ] MMMM D, YYYY");
+  $('#currentDay').text(timeOnPage);
+  console.log(timeOnPage);
+
+
 
 
 
@@ -70,24 +79,9 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
   //
 
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
 
-  function blockColors() {
-    var currentTime = dayjs().format('kk');
 
-    for (var i = 0; i < timePeriod.length; i++) {
-      if (parseInt(timePeriod[i].id) === (currentTime)) {
-        timePeriod[i].style.backgroudColor = currentColor;
-      } else if (parseInt(timePeriod[i].id) > (currentTime)) {
-        timePeriod[i].style.backgroudColor = futureColor;
-      }
-    }
-  }
+
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -95,8 +89,4 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
   //
 
 
-  // TODO: Add code to display the current date in the header of the page.
-  var timeOnPage = dayjs().format("[Today is: ]MMMM D, YYYY");
-  $('#currentDay').text(timeOnPage);
-  console.log(timeOnPage);
 
