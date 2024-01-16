@@ -1,3 +1,5 @@
+var todayDate = $('#currentDay');
+
 $(document).ready(function() {
   $('.saveBTN').on('click', function () {
     var value = $(this).siblings('.decsription').val();
@@ -80,4 +82,7 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
 
   // TODO: Add code to display the current date in the header of the page.
+  var timeOnPage = dayjs().format("[Today is: ]MMMM D, YYYY");
+  $('#currentDay').text(timeOnPage);
+  console.log(timeOnPage);
 
